@@ -14,20 +14,12 @@ import SwiftUI
 // cannot change struct bc properties are fixed but @State allows it to be stored separately
 // mutating
 struct ContentView: View {
+
+    @State private var tapCount = 0
+
     var body: some View {
-        NavigationView {
-            Form {
-                Section {
-                    Text("Hello World")
-                    Text("Hello World")
-                    Text("Hello World")
-                }
-                Section {
-                    Text("Hello World")
-                    Text("Hello World")
-                }
-                .navigationBarTitle(Text("SwiftUI"), displayMode: .inline)
-            }
+        Button("Tap Count \(tapCount)") {
+            self.tapCount += 1
         }
     }
 }
